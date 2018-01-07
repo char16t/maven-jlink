@@ -1,7 +1,12 @@
 [Setup]
-AppName=Hello World
-AppVerName=1.0-SNAPSHOT
+AppName={#XAppName}
+AppVerName={#XAppVersion}
 DefaultDirName={pf}\HelloWorld
+
+UsePreviousLanguage=no
+
+Compression=lzma2
+SolidCompression=yes
 
 ArchitecturesAllowed=x64
 ArchitecturesInstallIn64BitMode=x64

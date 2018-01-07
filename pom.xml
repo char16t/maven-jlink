@@ -70,6 +70,8 @@
                         <configuration>
                             <executable>iscc</executable>
                             <arguments>
+                                <argument>/DXAppName=${artifactId}</argument>
+                                <argument>/DXAppVersion=${version}</argument>
                                 <argument>/O${project.build.directory}/installers</argument>
                                 <argument>${project.build.directory}/classes/setup.iss</argument>
                             </arguments>
