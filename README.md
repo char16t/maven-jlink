@@ -1,3 +1,3 @@
 ```
-mvn clean compile exec:exec@installer
+mvn clean compile exec:exec@standalone
 ```

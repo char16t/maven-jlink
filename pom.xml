@@ -25,7 +25,7 @@
                 <version>1.4.0</version>
                 <executions>
                     <execution>
-                        <id>installer</id>
+                        <id>standalone</id>
                         <goals>
                             <goal>exec</goal>
                         </goals>
@@ -39,7 +39,7 @@
                                 <argument>--launcher</argument>
                                 <argument>launch=com.manenkov.demo.jlink/com.manenkov.demo.jlink.Application</argument>
                                 <argument>--output</argument>
-                                <argument>${build.directory}${file.separator}installer</argument>
+                                <argument>${build.directory}${file.separator}standalone</argument>
                                 <argument>--compress</argument>
                                 <argument>2</argument>
                                 <argument>--no-header-files</argument>
