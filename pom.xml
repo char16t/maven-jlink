@@ -20,6 +20,18 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.manenkov.demo.jlink.Application</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.4.0</version>
@@ -33,7 +45,9 @@
                             <executable>${java.home}/bin/jlink</executable>
                             <arguments>
                                 <argument>--module-path</argument>
-                                <argument>${java.home}${file.separator}jmods;${project.build.directory}${file.separator}${artifactId}-${version}.jar</argument>
+                                <argument>
+                                    ${java.home}${file.separator}jmods;${project.build.directory}${file.separator}${artifactId}-${version}.jar
+                                </argument>
                                 <argument>--add-modules</argument>
                                 <argument>com.manenkov.demo.jlink</argument>
                                 <argument>--launcher</argument>
@@ -45,6 +59,19 @@
                                 <argument>--no-header-files</argument>
                                 <argument>--no-man-pages</argument>
                                 <argument>--strip-debug</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>installer</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>iscc</executable>
+                            <arguments>
+                                <argument>/O${project.build.directory}/installers</argument>
+                                <argument>${project.build.directory}/classes/setup.iss</argument>
                             </arguments>
                         </configuration>
                     </execution>
