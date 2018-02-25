@@ -21,3 +21,7 @@ Result:
  * `target\installers` contains `mysetup.exe` installer
  * `target\standalone` contains your distribution
  * `helloworld.bat` at your `PATH`! Use `helloworld` command everywhere
+ 
+ ## Unlicense
+ This is a public domain. Do with this code what you want
+ 
