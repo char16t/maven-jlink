@@ -1,4 +1,4 @@
-# helloworld cli
+# installable cli app
 
 This is `helloworld` command line tool built on Java 9 using `jlink` and 
 installer for Windows. This is a demo of real installable Java application that
